@@ -7,6 +7,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [color]="logicColor" class="ion-padding">
+  <ion-grid>
+    <!--City-->
+    <ion-row class="ion-text-center">
+        <ion-col class="ion-text-center">
+            <h1>{{resultado.name}}</h1>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+        <ion-col>
+            <p>{{weatherDesc.description | titlecase}}</p>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+        <ion-col>
+            <img [src]="weatherDesc.icon | weatherIcons">
+        </ion-col>
+        <ion-col>
+            <h2 class="temperature">{{temperatura.temp | number: '1.0-0'}}º</h2>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <h3 class="viento">💨 {{viento.speed}} km/h</h3>
+        </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>
