@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Forecast } from './interfaces/interfaces';
 
-const apiKey = '5154da0aa5fc6eb70df6edd3b41ccc3b';
+const apiKey = '4b7f9f3a58071ebd0634a036f6da88c4';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,7 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   public getForecastNow<Forecast>(lat: string, lon: string) {
-    const query = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
-
+    const query = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
     return this.http.get<Forecast>(query);
   }
 }
