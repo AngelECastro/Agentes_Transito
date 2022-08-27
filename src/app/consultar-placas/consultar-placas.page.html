@@ -3,22 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Consultar Placas</ion-title>
+    <ion-title><h5>Consultas para Carros</h5></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search" [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  </ion-toolbar>
   <ion-list>
-    <ion-list-header>
-      <ion-label> Consultas para Placas </ion-label>
-    </ion-list-header>
+    <ion-item *ngFor="let digimon of digimons | filter:filterTerm">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{ digimon.img }}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{digimon.name}}</ion-label>
+    </ion-item>
   </ion-list>
-
-  <ion-item>
-    <ion-label position="floating">Ingrese su numero de placa </ion-label>
-    <ion-input ></ion-input>
-  </ion-item>
-
-    <ion-button expand="block">Aceptar</ion-button>
 </ion-content>

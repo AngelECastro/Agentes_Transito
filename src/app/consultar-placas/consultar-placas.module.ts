@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ConsultarPlacasPageRoutingModule } from './consultar-placas-routing.module';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ConsultarPlacasPage } from './consultar-placas.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { ConsultarPlacasPage } from './consultar-placas.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ConsultarPlacasPageRoutingModule
+    ConsultarPlacasPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [ConsultarPlacasPage]
 })
