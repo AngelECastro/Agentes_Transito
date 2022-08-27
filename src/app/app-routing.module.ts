@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -9,44 +10,61 @@ const routes: Routes = [
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule),canActivate: [AuthGuard]
   },
   {
     path: 'consultar-multas',
-    loadChildren: () => import('./consultar-multas/consultar-multas.module').then( m => m.ConsultarMultasPageModule)
+    loadChildren: () => import('./consultar-multas/consultar-multas.module').then( m => m.ConsultarMultasPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'consultar-placas',
-    loadChildren: () => import('./consultar-placas/consultar-placas.module').then( m => m.ConsultarPlacasPageModule)
+    loadChildren: () => import('./consultar-placas/consultar-placas.module').then( m => m.ConsultarPlacasPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'consultar-licencia',
-    loadChildren: () => import('./consultar-licencia/consultar-licencia.module').then( m => m.ConsultarLicenciaPageModule)
+    loadChildren: () => import('./consultar-licencia/consultar-licencia.module').then( m => m.ConsultarLicenciaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'aplicar-multa',
-    loadChildren: () => import('./aplicar-multa/aplicar-multa.module').then( m => m.AplicarMultaPageModule)
+    loadChildren: () => import('./aplicar-multa/aplicar-multa.module').then( m => m.AplicarMultaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'tipos-multas',
-    loadChildren: () => import('./tipos-multas/tipos-multas.module').then( m => m.TiposMultasPageModule)
+    loadChildren: () => import('./tipos-multas/tipos-multas.module').then( m => m.TiposMultasPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'mapa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'noticias',
-    loadChildren: () => import('./noticias/noticias.module').then( m => m.NoticiasPageModule)
+    loadChildren: () => import('./noticias/noticias.module').then( m => m.NoticiasPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'clima',
-    loadChildren: () => import('./clima/clima.module').then( m => m.ClimaPageModule)
+    loadChildren: () => import('./clima/clima.module').then( m => m.ClimaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'horoscopo',
-    loadChildren: () => import('./horoscopo/horoscopo.module').then( m => m.HoroscopoPageModule)
-  }
+    loadChildren: () => import('./horoscopo/horoscopo.module').then( m => m.HoroscopoPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services.login/auth.service';
 import { User } from '../shared/user.class';
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
     const user = await this.authSvc.onLogin(this.user);
     if (user){
       console.log('Logeado correctamente');
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('tipos-multas');
     }
   }
 
