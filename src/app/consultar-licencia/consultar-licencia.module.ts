@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ConsultarLicenciaPageRoutingModule } from './consultar-licencia-routing.module';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ConsultarLicenciaPage } from './consultar-licencia.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { ConsultarLicenciaPage } from './consultar-licencia.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ConsultarLicenciaPageRoutingModule
+    ConsultarLicenciaPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [ConsultarLicenciaPage]
 })

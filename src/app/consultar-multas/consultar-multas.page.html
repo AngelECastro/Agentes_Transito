@@ -9,19 +9,14 @@
 
 <ion-content>
   <ion-toolbar>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar placeholder="Search" [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
   </ion-toolbar>
   <ion-list>
-    <ion-list-header>Multas</ion-list-header>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="https://www.elcomercio.com/wp-content/uploads/2022/08/choque-ec-700x391.jpg">
-      </ion-avatar>
-      <ion-label>
-        <h2>1</h2>
-        <h3>Jose Miguel</h3>
-        <p>Le cayo un carro por mamañema</p>
-      </ion-label>
+    <ion-item *ngFor="let i of multas | filter:filterTerm">
+      <label for=""><span style="color: green;">{{i.cedula}}</span> <br> <span>{{i.motivo}}</span> <br> <span style="color: gray;">{{i.comentario}}</span></label>
     </ion-item>
   </ion-list>
+  <ion-footer>
+    <ion-button expand="full" (click)="deleteAll()">Borrar todo</ion-button>
+  </ion-footer>
 </ion-content>

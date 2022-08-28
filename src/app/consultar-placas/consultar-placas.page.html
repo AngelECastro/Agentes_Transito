@@ -12,11 +12,11 @@
     <ion-searchbar placeholder="Search" [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
   </ion-toolbar>
   <ion-list>
-    <ion-item *ngFor="let digimon of digimons | filter:filterTerm">
+    <ion-item *ngFor="let digimon of vehicles | filter:filterTerm">
       <ion-thumbnail slot="start">
         <ion-img src="{{ digimon.img }}"></ion-img>
       </ion-thumbnail>
-      <ion-label>{{digimon.name}}</ion-label>
+      <ion-label>{{digimon.model}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

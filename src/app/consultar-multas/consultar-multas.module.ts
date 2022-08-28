@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ConsultarMultasPageRoutingModule } from './consultar-multas-routing.module';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ConsultarMultasPage } from './consultar-multas.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { ConsultarMultasPage } from './consultar-multas.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ConsultarMultasPageRoutingModule
+    ConsultarMultasPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [ConsultarMultasPage]
 })

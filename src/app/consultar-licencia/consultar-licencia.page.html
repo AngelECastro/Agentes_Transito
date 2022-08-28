@@ -3,19 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><h5>Consultar Conductor</h5></ion-title>
+    <ion-title><h5>Consultas para conductores</h5></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-toolbar>
-    <ion-searchbar animated></ion-searchbar>
+    <ion-searchbar placeholder="Search" [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
   </ion-toolbar>
   <ion-list>
-    <ion-list-header><h6>Licencias</h6></ion-list-header>
-    <ion-item>
-      <ion-label>
-      </ion-label>
+    <ion-item *ngFor="let digimon of persons | filter:filterTerm">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{ digimon.dni }}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{digimon.placa}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
